@@ -1,9 +1,12 @@
 import React from 'react';
+import { AddUserForm } from '../components/AddUserForm';
 
 const AddUserViewFactory = () => {
     const AddUserView = () => {
         return (
-            <h1>add user view</h1>
+            <div>
+                <AddUserForm onSubmit={() => console.log('submitted')} />
+            </div>
         )
     }
 
