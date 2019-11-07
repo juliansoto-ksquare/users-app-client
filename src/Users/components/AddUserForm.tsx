@@ -18,7 +18,7 @@ export const AddUserForm: React.FC<IUserFormProps> = ({onSubmit}) => {
                 </label>
                 <label>
                     Age:
-                    <input name="firstName" type="text" required />
+                    <input name="age" type="number" required />
                 </label>
                 <button>Create</button>
             </form>

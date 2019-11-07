@@ -4,9 +4,13 @@ import UserListViewFactory from './views/UserListView';
 import UserDetailsViewFactory from './views/UserDetailsView';
 import AddUserViewFactory from './views/AddUserView';
 
+import {AxiosUserService} from './services/AxiosUserService';
+
+const axiosUserService = AxiosUserService();
+
 const UserListView = UserListViewFactory();
 const UserDetailsView = UserDetailsViewFactory();
-const AddUserView = AddUserViewFactory();
+const AddUserView = AddUserViewFactory(axiosUserService);
 
 const UserRouter: React.FC = () => {
   return (
