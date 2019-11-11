@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { User } from '../entities/User';
 import {AxiosUserService} from '../services/AxiosUserService';
 import { Link } from 'react-router-dom';
+import {UserList, UserListItemLink} from '../atoms/UserListItem';
 
 const axiosUserService = AxiosUserService();
 
@@ -22,22 +23,21 @@ const UserListViewFactory = () => {
                     <h1>List of users</h1>
                     <Link to="/add">Add user</Link>
                 </header>
-                <ul>
+                <UserList>
                     {
                         userList.map(user => {
                             return (
                                 <li key={user.id}>
-                                    <Link to={`/${user.id}`}>
-                                        <span>First name: {user.firstName}</span>
-                                        <span>Last name: {user.lastName}</span>
-                                        <span>age: {user.age}</span>
-                                        <span>ID: {user.id}</span>
-                                    </Link>
+                                    <UserListItemLink to={`/${user.id}`}>
+                                        {
+                                            `${user.firstName} ${user.lastName}`
+                                        }
+                                    </UserListItemLink>
                                 </li>
                             )
                         })
                     }
-                </ul>
+                </UserList>
             </div>
         )
     }
