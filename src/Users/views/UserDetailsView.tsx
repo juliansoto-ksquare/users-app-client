@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {User, user} from '../entities/User';
 import { AxiosUserService } from '../services/AxiosUserService';
 import { useParams } from 'react-router-dom';
+import {UserDetailsRow} from '../atoms/UserDetails';
 
 const axiosUserService = AxiosUserService();
 
@@ -18,14 +19,26 @@ const UserDetailsViewFactory = () => {
         }, [id]);
 
         return (
-            <div>
-                <p>
-                    <span>First name: {userDetails.firstName}</span>
-                    <span>Last name: {userDetails.lastName}</span>
-                    <span>age: {userDetails.age}</span>
-                    <span>ID: {userDetails.id}</span>
-                </p>
-            </div>
+            <table>
+                <tbody>
+                    <UserDetailsRow>
+                        <td>First name:</td>
+                        <td>{userDetails.firstName}</td>
+                    </UserDetailsRow>
+                    <UserDetailsRow>
+                        <td>Last name:</td>
+                        <td>{userDetails.lastName}</td>
+                    </UserDetailsRow>
+                    <UserDetailsRow>
+                        <td>Age:</td>
+                        <td>{userDetails.age}</td>
+                    </UserDetailsRow>
+                    <UserDetailsRow>
+                        <td>ID:</td>
+                        <td>{userDetails.id}</td>
+                    </UserDetailsRow>
+                </tbody>
+            </table>
         )
     }
 
