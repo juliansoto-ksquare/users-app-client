@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Install and running
+
+- Clone from repository
+
+- Install packages with `yarn install`
+
+- Create a .env.local file with a variable called `REACT_APP_API` with the URL of the API, including the protocol, the subdomain, domain, and port
+
+- Run development server using `yarn start`
+
 ## Available Scripts
 
 In the project directory, you can run:
